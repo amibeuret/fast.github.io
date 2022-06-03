@@ -16,9 +16,9 @@ In *ImageCentering* the tip of the arthroscope (the Agent) must visualise the ta
 In *TraceLines*, the avatar will follow multiple splines, during which the tip of the arthroscope (the Agent) must follow the avatar. 
 
 
-<p align="center">
+<!-- <p align="center">
   <video width="852" height="480" src="https://drive.google.com/uc?id=1rQhgEABE1mdoqOtRG5IkRqq5kyAl81Hp">
-</p>
+</p> -->
 
 
 
@@ -26,9 +26,9 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
 
 In *Periscoping* the tip of the arthroscope (the Agent) must visualise the target avatar using angeld optics. 
 
-<p align="center">
+<!-- <p align="center">
   <video width="852" height="480" src="https://drive.google.com/uc?id=1PL9EaWB3GaLsTz_0wi0V3rEuVWbfEic2">
-</p>
+</p> -->
 
 
 ### Training an RL Agent Using ML-Agents
