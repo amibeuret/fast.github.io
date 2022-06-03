@@ -2,7 +2,7 @@
 
 **FASTRL** is a a set of benchmark tasks used in surgical training which are adapted to the reinforcement learning setting for the purpose of training agents capable of providing assistance to the surgical trainees. The benchmark is provided with the purpose of exploring the domain of human-centric teaching agents within the learning-to-teach formalism.
 
-**FASTRL** uses the Arthros$\circledR$ FAST (Fundamentals of Arthroscopic Surgery Training) simulator provided by Virtamed AG 
+**FASTRL** uses the FAST (Fundamentals of Arthroscopic Surgery Training) simulator provided by Virtamed AG 
 to evaluate the RL pipeline. The simulation provides a number of educational navigation and manipulation tasks performed within a hollow dome structure in accordance with the Fundamentals of Arthroscopic Surgery Training (FAST) training problem developed by major American orthopaedic associations ABOS (American Board of Orthopaedic Surgery), AAOS (American Academy of Orthopaedic Surgeons) and AANA (Arthroscopy Association of North America).
 
 ### Benchmark Tasks
