@@ -17,7 +17,7 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
 
 
 <p align="center">
-  <video width="852" height="480" src="https://user-images.githubusercontent.com/50180899/171823852-d436b96d-7355-400c-8ebe-8abd116bed5e.mp4">
+  <video width="852" height="480" src="https://drive.google.com/uc?id=1rQhgEABE1mdoqOtRG5IkRqq5kyAl81Hp">
 </p>
 
 
@@ -27,10 +27,8 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
 In *Periscoping* the tip of the arthroscope (the Agent) must visualise the target avatar using angeld optics. 
 
 <p align="center">
-  <video width="852" height="480" src="https://user-images.githubusercontent.com/50180899/171823678-310bf331-7c82-4593-8c4a-addf3dd1425c.mp4">
+  <video width="852" height="480" src="https://drive.google.com/uc?id=1PL9EaWB3GaLsTz_0wi0V3rEuVWbfEic2">
 </p>
-
-
 
 
 ### Training an RL Agent Using ML-Agents
