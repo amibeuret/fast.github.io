@@ -1,4 +1,4 @@
-## Fundamentals of Arthroscopic Surgery Training: a reinforcement learning exploration and benchmark
+## FASTRL: a reinforcement learning exploration and benchmark
 
 **FASTRL** is a a set of benchmark tasks used in surgical training which are adapted to the reinforcement learning setting for the purpose of training agents capable of providing assistance to the surgical trainees. The benchmark is provided with the purpose of exploring the domain of human-centric teaching agents within the learning-to-teach formalism.
 
@@ -22,6 +22,7 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
  -->
 https://user-images.githubusercontent.com/50180899/171658310-fe85fa4b-2598-4370-90f5-ac5617c034ff.mov
 
+![Uploading mlagents-tl_oldstates_newbuild_4_seed_272-TraceLines-18099100_small.gif…]()
 
 
 #### *Periscoping*
