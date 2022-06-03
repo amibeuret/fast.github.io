@@ -49,7 +49,7 @@ To learn more about different provided environment please see [Environments](#en
 
 The following is an example of how to train a PPO agent (described in the config file) for the *Periscoping* environment.
 ```
-python sb3_main.py --ml_config_path configs/config_sb3.yaml --env ../builds/ic/ic.x86_64 --task_name ImageCentering -n ic
+python sb3_main.py --ml_config_path configs/config_sb3.yaml --env builds/ic/ic.x86_64 --run_id test --results_dir results --task_name ImageCentering -n ic
 
 ```
 ### Training Configs
