@@ -37,9 +37,8 @@ In *Periscoping* the tip of the arthroscope (the Agent) must visualise the targe
 
 <!-- https://user-images.githubusercontent.com/50180899/172021538-4e3282ad-5340-4e92-9edf-ec53d0059e6f.mp4 -->
 
-<iframe width="1487" height="691" src="<iframe width="1280" height="720" src="https://www.youtube.com/embed/P2hJOsMXDPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/P2hJOsMXDPw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Training an RL Agent Using ML-Agents
 
