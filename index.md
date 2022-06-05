@@ -12,6 +12,8 @@ The benchmark contains three tasks: *ImageCentering* consisting of image centeri
 ## *ImageCentering*
 In *ImageCentering* the tip of the arthroscope (the Agent) must visualise the target avatar by centering the target in the field of view of the arthroscope. 
 
+<iframe width="1113" height="631" src="https://www.youtube.com/embed/aBoQ87usZwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## *TraceLines*
 In *TraceLines*, the avatar will follow multiple splines, during which the tip of the arthroscope (the Agent) must follow the avatar. 
 
@@ -24,7 +26,8 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
 
 In *Periscoping* the tip of the arthroscope (the Agent) must visualise the target avatar using angeld optics. 
 
-<iframe width="1280" height="723" src="https://www.youtube.com/embed/SgtkEJP1-WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1113" height="629" src="https://www.youtube.com/embed/W1VmZ9HGg0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 # Training an RL Agent Using ML-Agents
 
