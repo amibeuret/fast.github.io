@@ -67,6 +67,15 @@ In the folder `configs` we provide template config files to train the agents. De
 
 The environments are released as binaries, however we provide an API to interact with the environments of the dataset. A fixed set of parameters allow modification of key aspects of the environment. The parameters can be passed in a .yaml configuration file as well as through the command line. For the input to be interpreted correctly, especially the .yaml files, strict adherance to the layout and formatting of the input is necessary. 
 
+Below is a list of all the binary files provided:
+
+| Task              | MacOs   |  Linux | Windows |  Description |
+|-------------------|---------|--------|---------|--------------|
+| *ImageCentering*  | FAST_IC | ic     |   -     | Default binaries for *ImageCentering* task |
+|  *Periscoping*    | FAST_PE | pe     |   -     | Default binaries for *Periscoping* task |
+|  *TraceLines*     | FAST_TL | tl     |   -     | Default binaries for *TraceLines* task |
+
+
 ## Configurable parameters
 
 The parameters that can be modified are categorzied in three groups: agent parameters, companion parameters, environment parameters. The agent parameters set values in either the agent class or the reward handler class. The companion parameters modify values the companion manager class and the environment parameters modify values the game manager class. 
