@@ -10,13 +10,17 @@ to evaluate the RL pipeline. The simulation provides a number of educational nav
 The benchmark contains three tasks: *ImageCentering* consisting of image centering and horizoning, *Periscoping* and *TraceLines* consisting of line tracing. These tasks consist of guiding the tip of the virtual endoscope to various locations marked by an avatar displaying visual cues. The goal is to orient the endoscope in such a way as to comply with the cues and center the image of the avatar in the field of view of the endoscope camera.
 
 ## *ImageCentering*
-In *ImageCentering* the tip of the arthroscope (the Agent) must visualise the target avatar by centering the target in the field of view of the arthroscope. 
+In *ImageCentering* the tip of the arthroscope (the Agent) must visualize the target avatar by centering the target in the field of view of the arthroscope. 
+
+The video below demonstrates what a potential solution shoud look like. In this video, an agent is trained using a PPO policy with a carefully shaped reward function adapted to the task.
 
 <iframe width="1113" height="631" src="https://www.youtube.com/embed/aBoQ87usZwQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## *TraceLines*
 In *TraceLines*, the avatar will follow multiple splines, during which the tip of the arthroscope (the Agent) must follow the avatar. 
 
+The video below demonstrates what a potential solution shoud look like. In this video, an agent is trained using a PPO policy with carefully shaped reward function adapted to the task.
 
 <iframe width="1113" height="631" src="https://www.youtube.com/embed/SgtkEJP1-WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -24,7 +28,9 @@ In *TraceLines*, the avatar will follow multiple splines, during which the tip o
 
 ## *Periscoping*
 
-In *Periscoping* the tip of the arthroscope (the Agent) must visualise the target avatar using angeld optics. 
+In *Periscoping* the tip of the arthroscope (the Agent) must visualize the target avatar using angeld optics. 
+
+The video below demonstrates what a potential solution shoud look like. In this video, an agent is trained using a PPO policy with carefully shaped reward function adapted to the task.
 
 <iframe width="1113" height="629" src="https://www.youtube.com/embed/W1VmZ9HGg0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -33,10 +39,12 @@ In *Periscoping* the tip of the arthroscope (the Agent) must visualise the targe
 
  The Unity Machine Learning Agents Toolkit ([ML-Agents](https://github.com/Unity-Technologies/ml-agents)) is an open source toolkit which provides PyTorch implementation of many known RL algorithms such as PPO, SAC and GAIL. 
 
+If you are not familar with ML-Agents or not sure how to isntall it via pip, please visit their website.
+
 The following command shows how to train a simple PPO model (described in the config file `configs/fast_ppo_config.yaml` provided in the repo) for the *Periscoping* environment (`--env pe/pe.x86_64`also provided in the repo)
 
 ```
-mlagents-learn configs/fast_ppo_config.yaml --env pe/pe.x86_64 --results-dir path/to/results --run-id my_experiment_name
+mlagents-learn configs/fast_ppo_config.yaml --env builds/pe/pe.x86_64 --results-dir path/to/results --run-id my_experiment_name
 ```
 
 To learn more about different provided environment please see [Environments](#environments)
@@ -45,16 +53,15 @@ To learn more about different provided environment please see [Environments](#en
 
 [Stable Baselines3](https://github.com/DLR-RM/stable-baselines3) is another popular RL open source project providing a set of reliable implementations of reinforcement learning algorithms in PyTorch. 
 
-The following is an example of how to train a PPO agent (described in the config file) for the *Periscoping* environment.
+Please check the Stable Baselines3 (SB3) website if you are not familiar with SB3 and for more information on how to setup SB3 via pip.
+
+The following is an example of how to train a PPO agent (described in the config file) for the *ImageCentering* environment.
 ```
-python sb3_main.py --ml_config_path configs/config_sb3.yaml --env builds/ic/ic.x86_64 --run_id test --results_dir results --task_name ImageCentering -n ic
+python sb3_main.py --ml_config_path configs/config_sb3.yaml --env builds/ic/ic.x86_64 --run_id my_experiment_name --results_dir results --task_name ImageCentering
 
 ```
 ## Training Configs
-
-### ML-Agents Configs
-
-### Stable Baseline Configs
+In the folder `configs` we provide template config files to train the agents. Depending on whether using ML-Agents or SB3 the config file must respect the required format.
 
 # Environments
 
@@ -64,37 +71,50 @@ The environments are released as binaries, however we provide an API to interact
 
 The parameters that can be modified are categorzied in three groups: agent parameters, companion parameters, environment parameters. The agent parameters set values in either the agent class or the reward handler class. The companion parameters modify values the companion manager class and the environment parameters modify values the game manager class. 
 
+For each task, the default parameters are provided in the `configs` folder.
+
 ### Agent parameters
 
-The following table illustrates the configurable parameters pertaining to the agent. The only parameter that varies between different tasks is the list of reward weights. This is because every task has a different set of possible actions the agent can take and therefore different rewards are calculated.
+The following table illustrates the configurable parameters pertaining to the agent. The only parameter that varies between different tasks is the list of reward weights due to the reward shaping being specific to each task.
 
 | Parameter  | Type &ensp; | Description  |
 |------------|----------|---------|
-| name       | string   |shorthand name for the task currently being executed (no functionality) |
-| [recordDemo](https://docs.unity3d.com/Packages/com.unity.ml-agents@1.0/api/Unity.MLAgents.Demonstrations.DemonstrationRecorder.html#Unity_MLAgents_Demonstrations_DemonstrationRecorder_Record) | bool     | whether a demonstration should be recorded |
+| name       | string   |shorthand name for the task currently being executed |
+| [recordDemo](https://docs.unity3d.com/Packages/com.unity.ml-agents@1.0/api/Unity.MLAgents.Demonstrations.DemonstrationRecorder.html#Unity_MLAgents_Demonstrations_DemonstrationRecorder_Record) | bool     | whether a demonstration should be recorded in ML-Agents format|
 | [maxStep](https://docs.unity3d.com/Packages/com.unity.ml-agents@1.0/api/Unity.MLAgents.Agent.html#Unity_MLAgents_Agent_MaxStep)    | int      | the maximum amount of steps the agent can take to complete a task before the episode is reset (from ML-Agents Agent class) |
-| timeScale  | int      | modifies how often a reward is added to the cumulative sum |
+| timeScale  | int      | Defines the multiplier for the deltatime in the simulation. If set to a higher value, time will pass faster in the simulation but the physics may perform unpredictably. Default 20 |
 | rewardWeights | Dictionary<string, float> | the weights used to calculate the reward for a particular action; this list varies between tasks, see lists below |
 
 Reward weight lists for every task:
 - Image Centering: 
-    - progressBarWeight
-    - taskCompletedWeight
-    - leftDomeWeight
+    - progressBar
+    - taskCompleted
+    - leftDome
     - timeStepPenalty
     - maxVelocityPenalty
-    - distRewardWeight
-    - angleRewardWeight
-    - visRewardWeight
+    - distReward
+    - angleReward
+    - visReward
 - Periscoping:
-    - progressBarWeight
-    - taskCompletedWeight
-    - leftDomeWeight
+    - progressBar
+    - taskCompleted
+    - leftDome
     - timeStepPenalty
     - maxVelocityPenalty
-    - distRewardWeight
-    - angleRewardWeight
-    - raysWeight
+    - distReward
+    - angleReward
+    - raysReward
+- TraceLines:
+    - progressBar
+    - reachedFocus
+    - taskCompleted
+    - leftDome
+    - timeStepPenalty
+    - maxVelocityPenalty
+    - anglePenalty
+    - distReward
+    - angleReward
+    - visReward
 
 ### Companion parameters
 
@@ -134,37 +154,29 @@ When running the environment in inference mode, the model (the 'brains' of the a
 
 ## Configuration files
 
-Input can be passed to the environment in a .yaml configuration file. There is a default config file that is always loaded into the environment to initialize all the parameters. This file should not be modified, as any discrepancies can cause the file to not be loaded, resulting in the environment crashing. To modify any of the values, pass them on through a custom configuration file. The custom config file will overwrite the default values. Here is the default configuration file with the default values for all parameters:
+Input can be passed to the environment in a .yaml configuration file. There is a default config file that is always loaded into the environment to initialize all the parameters. This file should not be modified, as any discrepancies can cause the file to not be loaded, resulting in the environment crashing. To modify any of the values, pass them on through a custom configuration file. The custom config file will overwrite the default values. Here is the default configuration file for *ImageCentering* with the default values for all parameters:
 
     #tasks
     ImageCentering: 
       name: ic
       rewardWeights:
-        progressBarWeight: 0.2
-        taskCompletedWeight: 100.0
+        progressBar: 0.2
+        taskCompleted: 100.0
         leftDomeWeight: -1000.0
         timeStepPenalty: 0.0
         maxVelocityPenalty: 0.1
-        distRewardWeight: 0.01
-        angleRewardWeight: 0.001
-        visRewardWeight: 0.01
-      timeScale: 1
+        distReward: 0.01
+        angleReward: 0.001
+        visReward: 0.01
+      timeScale: 20
       recordDemo: false
       maxStep: 10000
-    Periscoping: 
-      name: pe
-      rewardWeights:
-        progressBarWeight: 1.0
-        taskCompletedWeight: 100.0
-        leftDomeWeight: -5000.0
-        timeStepPenalty: 0.0
-        maxVelocityPenalty: 0.1
-        distRewardWeight: 0.001
-        angleRewardWeight: 0.001
-        raysRewardWeight: 0.01
-      timeScale: 1
-      recordDemo: false
-      maxStep: 10000
+      actionSpaceForce: true
+      newStateSpec: false
+      stackSize: 4
+      goalConditioning: true
+      useCameraRotation: true
+      rotateTarget: false
 
     #companion
     firstNPos: 6
@@ -196,6 +208,21 @@ Input can be passed to the environment in a .yaml configuration file. There is a
     randomPos: false
     shufflePos: false
     addNoise: false
+    noiseValue: 0.3
+    randLoX: -3.0
+    randHiX: 0.0
+    randLoY: 2.0
+    randHiY: 10.0
+    randLoZ: -1.5
+    randHiZ: 1.5
+    sphereConstraint: false
+    sphereCenter:
+      x: 0.0
+      y: 7.7
+      z: 0.0
+    sphereRadius: 2.0
+    splines: #leave empty
+    maxSplinePos: 0
 
     #other
     seed: 13 
@@ -216,8 +243,8 @@ Here is an example how to format a custom configuration file:
     #tasks
     ImageCentering: 
       rewardWeights:
-        progressBarWeight: 0.2
-        taskCompletedWeight: 100.0
+        progressBar: 0.2
+        taskCompleted: 100.0
         leftDomeWeight: -1000.0
       timeScale: 1
       recordDemo: false
