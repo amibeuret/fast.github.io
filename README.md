@@ -4,7 +4,7 @@ Ivan Ovinnikov, Ami Beuret, Flavia Cavaliere
 
 <p align="center">
   <a href="https://github.com/amibeuret/fast.github.io">View on ArXiv</a> |
-  <a href="https://github.com/amibeuret/fast.github.io">Project Website</a>
+  <a href="https://amibeuret.github.io/fast.github.io/">Project Website</a>
 </p>
 
 
