@@ -18,7 +18,7 @@ In *ImageCentering* the tip of the arthroscope (the Agent) must visualise the ta
 In *TraceLines*, the avatar will follow multiple splines, during which the tip of the arthroscope (the Agent) must follow the avatar. 
 
 
-<iframe width="1280" height="723" src="https://www.youtube.com/embed/SgtkEJP1-WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="1113" height="631" src="https://www.youtube.com/embed/SgtkEJP1-WY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
