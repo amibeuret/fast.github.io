@@ -1,5 +1,5 @@
 # Fundamentals of Arthroscopic Surgery Training: a reinforcement learning exploration and benchmark
-Ivan Ovinnikov, Ami Beuret, Flavia Cavaliere
+Ivan Ovinnikov, Ami Beuret, Flavia Cavaliere, Joachim M. Buhmann
 
 
 <p align="center">
